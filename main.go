@@ -6,12 +6,19 @@ import (
 	"github.com/gofiber/fiber/v3"
 )
 
+type Response struct {
+	Message   string `json:"message"`
+	Timestamp int64  `json:"timestamp"`
+}
+
 func main() {
 	app := fiber.New()
 
 	app.Get("/", func(c fiber.Ctx) error {
-		return c.JSON("My name is Tariq")
+		return c.JSON(Response{
+			Message:   "My name is Tariq Kadir",
+			Timestamp: 1000,
+		})
 	})
-
 	log.Fatal(app.Listen(":3000"))
 }
