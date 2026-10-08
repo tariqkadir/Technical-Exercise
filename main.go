@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	"github.com/gofiber/fiber/v3"
 )
@@ -17,7 +18,7 @@ func main() {
 	app.Get("/", func(c fiber.Ctx) error {
 		return c.JSON(Response{
 			Message:   "My name is Tariq Kadir",
-			Timestamp: 1000,
+			Timestamp: time.Now().Unix(),
 		})
 	})
 	log.Fatal(app.Listen(":3000"))
