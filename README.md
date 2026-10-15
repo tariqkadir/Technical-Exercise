@@ -12,7 +12,7 @@ A simple Golang web application created for the interview exercise.
 
 ## Status
 
-Repository initialized. Golang application development in progress.
+Repository initialized. Golang application and Docker container complete. Github Actions in progress.
 
 # Getting Started
 
