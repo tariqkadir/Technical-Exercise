@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -27,7 +28,6 @@ jobs:
 
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@master
-        continue-on-error: true
 
       - name: Log in to Docker Hub
         if: github.event_name != 'pull_request'
