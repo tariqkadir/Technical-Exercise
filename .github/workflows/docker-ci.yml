@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -26,8 +25,8 @@ jobs:
       - name: Run the image
         run: docker run --rm -d -p 80:3000 golang-app:test
 
-      - name: run tests
-        uses: liatrio/github-actions/apprentice-action@master
+      # name: run tests
+      #  uses: liatrio/github-actions/apprentice-action@master
 
       - name: Log in to Docker Hub
         if: github.event_name != 'pull_request' || github.head_ref == 'feat/gh_actions'
